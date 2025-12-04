@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Földrajz Kvíz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Témaválasztó képernyő -->
+        <div id="topicScreen" class="screen active">
+            <h1>🌍 Földrajz Kvíz</h1>
+            <p class="subtitle">Válassz témakört és teszteld a tudásod!</p>
+            <p class="subtitle-info">A nehezebb feladat több pontot ér.</p>
+            <div class="topic-buttons">
+                <button class="topic-btn" data-topic="csillagaszat">⭐ Csillagászat</button>
+                <button class="topic-btn" data-topic="kozetbolygo">🪨 Kőzetbolygó</button>
+                <button class="topic-btn" data-topic="legkor">☁️ Légkör</button>
+                <button class="topic-btn" data-topic="vizburok">💧 Vízburok</button>
+                <button class="topic-btn" data-topic="geoszferak">🌐 Geoszférák</button>
+            </div>
+        </div>
+
+        <!-- Nehézség választó képernyő -->
+        <div id="difficultyScreen" class="screen">
+            <h2 class="question-counter">Kérdés <span id="currentQuestion">1</span> • Összpontszám: <span id="totalPointsDisplay">0</span> • Hiányzó pont: <span id="missingPoints">30</span></h2>
+            <h3>Válassz nehézségi szintet:</h3>
+            <div class="difficulty-buttons">
+                <button class="diff-btn" data-difficulty="könnyű">😊 Könnyű</button>
+                <button class="diff-btn" data-difficulty="közepes">🤔 Közepes</button>
+                <button class="diff-btn" data-difficulty="nehéz">🔥 Nehéz</button>
+            </div>
+        </div>
+
+        <!-- Kérdés képernyő -->
+        <div id="questionScreen" class="screen">
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <h2 class="question-counter">Kérdés <span id="qNum">1</span> • <span id="currentPoints">0</span>/<span id="maxPoints">30</span> pont</h2>
+            <div class="question-box">
+                <p id="questionText"></p>
+                <div id="answersContainer"></div>
+            </div>
+            <button id="submitAnswer" class="btn-primary">Válasz elküldése</button>
+        </div>
+
+        <!-- Válasz visszajelzés képernyő -->
+        <div id="feedbackScreen" class="screen">
+            <div id="feedbackContent"></div>
+            <div id="nextDifficultyChoice" class="difficulty-choice">
+                <h3>Válassz nehézséget a következő kérdéshez:</h3>
+                <div class="difficulty-buttons">
+                    <button class="diff-btn-small" data-difficulty="könnyű">😊 Könnyű</button>
+                    <button class="diff-btn-small" data-difficulty="közepes">🤔 Közepes</button>
+                    <button class="diff-btn-small" data-difficulty="nehéz">🔥 Nehéz</button>
+                </div>
+            </div>
+            <button id="nextQuestion" class="btn-primary">Következő kérdés →</button>
+        </div>
+
+        <!-- Eredmény képernyő -->
+        <div id="resultScreen" class="screen">
+            <h2>📊 Eredmény</h2>
+            <div id="resultContent"></div>
+            <div id="correctAnswersSection"></div>
+            <div id="certificateSection"></div>
+            <button id="restartQuiz" class="btn-secondary">🔄 Új kvíz kezdése</button>
+        </div>
+    </div>
+
+    <canvas id="certificateCanvas" style="display: none;"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
