@@ -1,7 +1,5 @@
-# 🌍 Földrajz Kvíz Alkalmazás
+# 🌍 Földrajz Kvíz Alkalmazás - Interaktív kvíz alkalmazás Excel-alapú kérdésbankkal, képes kérdésekkel és letölthető tanúsítvánnyal
 Az alábbi leírást MI generálta, fejlesztő ellenőrizte és javította.
-
-Interaktív kvíz alkalmazás Excel-alapú kérdésbankkal, képes kérdésekkel és letölthető tanúsítvánnyal.
 
 ## 📦 Fájlstruktúra
 
